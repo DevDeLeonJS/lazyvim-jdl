@@ -1,8 +1,12 @@
-tt.*
-.tests
-doc/tags
-debug
-.repro
-foo.*
+# Ignorar estado de Lazy y plugins instalados
+.lazy.lua
+/plugin/
+
+# Ignorar logs y archivos temporales de Neovim
 *.log
-data
+/undo/
+/swap/
+/backup/
+
+# Opcional: Descomenta la siguiente línea si NO quieres guardar las versiones exactas de plugins
+# lazy-lock.json
