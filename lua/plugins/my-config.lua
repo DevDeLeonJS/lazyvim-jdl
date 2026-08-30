@@ -4,10 +4,25 @@ return {
       vim.cmd.colorscheme("catppuccin")
   end },
   { "nvim-treesitter/nvim-treesitter", opts = {
-      ensure_installed = { "typescript", "javascript", "php", "markdown", "yaml" },
+      ensure_installed = { "typescript", "javascript", "docker", "php", "markdown", "yaml" },
+  }},
+  { "mason.nvim", opts = {
+      ensure_installed = {
+        "typescript-language-server",
+        "docker-language-server",
+      },
   }},
   { "folke/snacks.nvim", opts = {
-      picker = { enabled = true },
+      picker = {
+        enabled = true,
+        sources = {
+          explorer = {
+            hidden  = true,
+            ignored = true,
+            exclude = { ".git" },
+          },
+        },
+      },
       explorer = { enabled = true },
       terminal = { enabled = true },
   }},
